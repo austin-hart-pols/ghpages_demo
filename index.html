@@ -1,71 +1,60 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Publishing to github pages</title>
+    <title>GitHub Pages</title>
     <meta charset="utf-8" />
-    <meta name="author" content="A Hart" />
-    <meta name="date" content="2023-05-08" />
+    <meta name="author" content="Austin Hart, Ph.D." />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/nhsr.css" type="text/css" />
+    <link rel="stylesheet" href="css/nhsr-fonts.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
 
-.title[
-# Publishing to github pages
-]
-.author[
-### A Hart
-]
-.institute[
-### American university
-]
-.date[
-### 08 May 2023
-]
+
+
+
+
+class: title-slide, left, bottom
+
+# GitHub Pages
+----
+## **Hosting sites trhough GitHub**
+### Austin Hart, Ph.D.
+### American University
 
 ---
+# Create your repository
 
-
-
-
-
-# Prep materials
-
-- `knit` file as normal in RStudio
-
-- Rename `html` output to `index.html`  
-
-
----
-# Create repository
-
-- Go to your `github` profile, and then repositories -&gt; New  
-
-- Give plain language name  
+- Create a new repository on `github` 
 
 - Set basic options:  
-  - Public setting  
+  - Public setting (required for `gh-pages`)
   - Add a README
   - Choose a license and `.gitignore` if you want
+  
+---
+# Create the product
+
+- Clone the `repo` to your computer
+
+- Create a new markdown file: `index.Rmd` and code! Make your slides, poster, whatever.
+
+- `knit` as normal  
 
 
 ---
 # Post and deploy
 
-- Upload/push **all** project files to your repository  
+- Commit and push (or upload) **all** project files to your repository  
 
 - Go to Settings -&gt; Pages. Under "Branch" change `None` to `main` and Save.
 
-- Check the link in environments to see if it worked.
+- After a minute, change the `About` option to include `Use your GitHub Pages website`.
 
 
----
-# an image just so you know
 
-&lt;img src="ghpages-demo_files/figure-html/unnamed-chunk-1-1.svg" style="display: block; margin: auto;" /&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -73,7 +62,6 @@ class: center, middle, inverse, title-slide
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,
-"countIncrementalSlides": false,
 "ratio": "16:9"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
@@ -171,6 +159,34 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
+<!--Hat-tip: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/-->
+<style>
+.logo {
+  background-image: url(img/logo-blue.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {
